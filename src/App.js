@@ -1,23 +1,24 @@
+import React from "react";
 import Pages from "./pages/Pages";
 import Category from "./components/Category";
-import { BrowserRouter } from "react-router-dom"
+import { Route, Routes } from "react-router-dom";
 import Search from "./components/Search";
 import styled from "styled-components";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { GiKnifeFork } from "react-icons/gi";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
       <Nav>
         <GiKnifeFork />
         <Logo to={"/"}>Delicious</Logo>
       </Nav>
-        <Search/>
-        <Category />
-        <Pages />
-      </BrowserRouter>
+
+      <Search />
+      <Category />
+      <Pages />
     </div>
   );
 }
@@ -25,19 +26,18 @@ function App() {
 const Logo = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
-  font-weight:400;
+  font-weight: 400;
   font-family: "Lobster Two", cursive;
-`
+`;
 const Nav = styled.div`
   padding: 4rem 0rem;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
-  align-item: center;
 
-  svg{
+  svg {
     font-size: 2rem;
-
   }
-`
+`;
 
 export default App;
